@@ -1,5 +1,5 @@
 // Offline-Cache und Erinnerungen für Schedule. VERSION erhöhen, um Updates auszuliefern.
-const VERSION = 'sp-v3.2.0'; // v3.2.0: flüssiger Wochenwechsel mit Glas-Übergang, To-Dos im Blocker bearbeiten, Productivity mit Statistik und Wochenbewertung
+const VERSION = 'sp-v3.3.0'; // v3.3.0: Heute als Vollbild mit Countdown, To-Dos über die Woche zuordnen, Bearbeiten ohne Lücken, Tagesbeginn und -ende
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));

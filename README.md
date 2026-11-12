@@ -1,6 +1,6 @@
 # Schedule
 
-Persönlicher Wochenplan fürs iPhone, als Web-App (PWA): eine Master-Woche mit Blockern, „Heute“ als Zeitstrahl, eine Wochenansicht, die man durch Gedrückthalten bearbeitet, und „Productivity“ mit To-Dos, Wochen-Statistik und Wochenbewertung. Die Daten bleiben auf dem Gerät.
+Persönlicher Wochenplan fürs iPhone, als Web-App (PWA): eine Master-Woche mit Blockern, „Heute“ als Vollbild mit Countdown des laufenden Blockers (doppelt tippen zeigt den ganzen Tag), eine Wochenansicht, die man durch Gedrückthalten bearbeitet, und „Productivity“ mit allen offenen To-Dos und der Zahl der erledigten. Die Daten bleiben auf dem Gerät.
 
 **App:** https://trolloberg.github.io/schedule/
 
