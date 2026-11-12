@@ -1,20 +1,119 @@
 name: iOS-App bauen
+
+# Baut die iPhone-App, prüft sie im Simulator und legt die fertige App-Datei (Schedule.ipa)
+# zusammen mit Bildschirmfotos und Protokollen im Zweig "ios-build" ab.
+
 on:
   push:
     branches: [ios-app]
+    paths-ignore: ['**.md']
   workflow_dispatch:
+
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: ios-app-build
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: macos-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
+    env:
+      BUNDLE: io.github.trolloberg.schedule
+      DEVICE_NAME: iPhone 17 Pro
     steps:
       - uses: actions/checkout@v4
+
       - name: Umgebung
         run: |
-          sw_vers
-          xcodebuild -version
-          ls /Applications | grep -i xcode || true
-          xcrun simctl list runtimes
-          xcrun simctl list devices available | head -80
+          mkdir -p out/bilder out/log
+          { sw_vers; xcodebuild -version; swift --version 2>&1; } | tee out/log/umgebung.txt
+
+      - name: Oberfläche aus den Quellen bauen
+        run: |
+          python3 web-src/build.py
+          git status --short -- Schedule/www || true
+
+      - name: App für den Simulator bauen
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project Schedule.xcodeproj -scheme Schedule -configuration Debug \
+            -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build/sim \
+            ARCHS=arm64 ONLY_ACTIVE_ARCH=NO \
+            > out/log/build-sim.log 2>&1 || {
+              echo "::group::Fehler"; grep -n -E "error:|error :|BUILD FAILED|The following build commands failed" -A6 out/log/build-sim.log | head -200 || true; echo "::endgroup::"
+              tail -60 out/log/build-sim.log || true
+              exit 1
+            }
+          echo "---- Warnungen ----"
+          grep -E "warning:" out/log/build-sim.log | sort -u | head -60 || true
+          ls -la build/sim/Build/Products/Debug-iphonesimulator/Schedule.app
+
+      - name: Simulator starten
+        id: sim
+        continue-on-error: true
+        timeout-minutes: 12
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 ci/pick_device.py "$DEVICE_NAME")
+          echo "UDID=$UDID" >> "$GITHUB_ENV"
+          xcrun simctl list devices available | grep "$UDID" | tee -a out/log/umgebung.txt
+          xcrun simctl boot "$UDID"
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl status_bar "$UDID" override --time "9:41" --batteryState charged --batteryLevel 100 --wifiBars 3 --cellularBars 4 || true
+          xcrun simctl install "$UDID" build/sim/Build/Products/Debug-iphonesimulator/Schedule.app
+
+      - name: App im Simulator prüfen
+        if: steps.sim.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 12
+        run: bash ci/simtest.sh
+
+      - name: App-Datei für das iPhone bauen (IPA)
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project Schedule.xcodeproj -scheme Schedule -configuration Release \
+            -sdk iphoneos -destination 'generic/platform=iOS' \
+            -derivedDataPath build/ios \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            > out/log/build-ios.log 2>&1 || {
+              echo "::group::Fehler"; grep -n -E "error:|error :|BUILD FAILED|The following build commands failed" -A6 out/log/build-ios.log | head -200 || true; echo "::endgroup::"
+              tail -60 out/log/build-ios.log || true
+              exit 1
+            }
+          APP=build/ios/Build/Products/Release-iphoneos/Schedule.app
+          test -f "$APP/Schedule"
+          test -f "$APP/Info.plist"
+          test -f "$APP/Assets.car"
+          test -f "$APP/www/index.html"
+          rm -rf build/ipa && mkdir -p build/ipa/Payload
+          cp -R "$APP" build/ipa/Payload/
+          (cd build/ipa && zip -qry "$GITHUB_WORKSPACE/out/Schedule.ipa" Payload)
+          {
+            echo "== Datei"; ls -l out/Schedule.ipa; shasum -a 256 out/Schedule.ipa
+            echo "== Architektur"; lipo -archs "$APP/Schedule"
+            echo "== Info.plist"; plutil -p "$APP/Info.plist"
+            echo "== Signatur"; codesign -dv "$APP" 2>&1 || true
+            echo "== Symbole im Asset-Katalog"; xcrun assetutil --info "$APP/Assets.car" | grep -E '"(Name|RenditionName)"' | sort | uniq -c || true
+            echo "== Inhalt"; (cd build/ipa && find Payload -type f -exec ls -l {} \;)
+          } > out/log/ipa.txt 2>&1
+          cat out/log/ipa.txt
+
+      - name: Ergebnisse im Zweig ios-build ablegen
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p out
+          cd out
+          echo "Commit $GITHUB_SHA, Lauf $GITHUB_RUN_ID" > stand.txt
+          git init -q -b ios-build
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Build ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ios-build
