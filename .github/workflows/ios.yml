@@ -1,8 +1,11 @@
 name: iOS-App bauen
 
 # Baut die iPhone-App und die fertige App-Datei (Schedule.ipa), prüft die App im Simulator und legt
-# App-Datei, Bildschirmfotos und Protokolle im Zweig "ios-build" ab. Die App-Datei entsteht vor der
-# Simulator-Prüfung: Bleibt der Simulator hängen, ist sie trotzdem da.
+# App-Datei, Bildschirmfotos und Protokolle im Zweig "ios-build" ab.
+#
+# Der Simulator auf GitHub bleibt manchmal hängen. Deshalb wird dreimal abgelegt: gleich nach dem Bauen
+# der App-Datei, nach den Prüfungen der App und am Ende. Die Prüfungen laufen über ci/wachhund.sh mit
+# fester Zeitgrenze, und die Fenster von iOS (Teilen, Dateiauswahl, Tastatur) kommen ganz zum Schluss.
 
 on:
   push:
@@ -85,6 +88,11 @@ jobs:
           } > out/log/ipa.txt 2>&1
           cat out/log/ipa.txt
 
+      - name: App-Datei ablegen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash ci/ablegen.sh "App-Datei gebaut"
+
       - name: Simulator starten
         id: sim
         continue-on-error: true
@@ -97,24 +105,29 @@ jobs:
           xcrun simctl bootstatus "$UDID" -b
           xcrun simctl status_bar "$UDID" override --time "9:41" --batteryState charged --batteryLevel 100 --wifiBars 3 --cellularBars 4 || true
           xcrun simctl install "$UDID" build/sim/Build/Products/Debug-iphonesimulator/Schedule.app
+          uptime
 
       - name: App im Simulator prüfen
         if: steps.sim.outcome == 'success'
         continue-on-error: true
         timeout-minutes: 16
-        run: bash ci/simtest.sh
+        run: bash ci/wachhund.sh 780 app
+
+      - name: Ergebnisse der Prüfung ablegen
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash ci/ablegen.sh "App geprüft"
+
+      - name: Fenster von iOS im Simulator prüfen
+        if: steps.sim.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 8
+        run: bash ci/wachhund.sh 300 ios
 
       - name: Ergebnisse im Zweig ios-build ablegen
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          mkdir -p out
-          cd out
-          echo "Commit $GITHUB_SHA, Lauf $GITHUB_RUN_ID" > stand.txt
-          git init -q -b ios-build
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -q -m "Build ${GITHUB_SHA::7}"
-          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ios-build
+        run: bash ci/ablegen.sh "Ende"
