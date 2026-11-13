@@ -17,8 +17,11 @@
 <script>
 // Hell/Dunkel vor dem ersten Zeichnen setzen, damit nichts aufblitzt
 (function(){var t='auto';try{var d=JSON.parse(localStorage.getItem('sp.data.v1')||'null');if(!d&&window.__nativeBoot&&window.__nativeBoot.env)d=JSON.parse(window.__nativeBoot.env).data;if(d&&d.set&&d.set.theme)t=d.set.theme}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();
+// iPhone-App: Ränder für Dynamic Island und Home-Balken gleich beim Start setzen. WebKit teilt sie der Seite erst
+// kurz nach dem ersten Bild mit, bis dahin gelten die Werte der App (siehe --safe-t). So verrutscht beim Öffnen nichts.
+(function(){try{var s=window.__nativeBoot&&window.__nativeBoot.info&&window.__nativeBoot.info.safe;if(s&&+s.t>0){var r=document.documentElement.style;r.setProperty('--nst',(+s.t)+'px');r.setProperty('--nsb',Math.max(0,+s.b||0)+'px')}}catch(e){}})();
 // Notbremse: Startet die App nicht, wenigstens einen Knopf zum Neuladen zeigen statt einer leeren Seite
-setTimeout(function(){var p=document.getElementById('page');if(p&&!p.firstElementChild)p.innerHTML='<div style="padding:120px 24px;text-align:center;font-size:17px">Schedule konnte nicht starten.<br><br><button style="font:inherit;font-weight:600;color:#fff;background:#007aff;border:0;border-radius:22px;padding:12px 22px" onclick="location.reload()">Neu laden</button></div>';},6000);
+setTimeout(function(){var p=document.getElementById('page');if(p&&!p.firstElementChild)p.innerHTML='<div style="padding:120px 24px;text-align:center;font-size:17px">Schedule konnte nicht starten.<br><br><button style="font:inherit;font-weight:600;color:#fff;background:#007aff;border:0;border-radius:22px;padding:12px 22px" onclick="try{window.webkit.messageHandlers.schedule.postMessage({t:\'reload\'})}catch(e){location.reload()}">Neu laden</button></div>';},6000);
 </script>
 <style>
 :root{
@@ -29,7 +32,7 @@ setTimeout(function(){var p=document.getElementById('page');if(p&&!p.firstElemen
   --glass:rgba(255,255,255,.6); --glass2:rgba(248,248,250,.86); --hi:rgba(255,255,255,.98); --edge:rgba(0,0,0,.13);
   --gshadow:0 8px 28px rgba(0,0,0,.10),0 1px 2px rgba(0,0,0,.05);
   --bar:rgba(242,242,247,.74); --r:24px; --fcard:rgba(255,255,255,.72);
-  --safe-t:env(safe-area-inset-top); --safe-b:env(safe-area-inset-bottom);
+  --safe-t:max(env(safe-area-inset-top),var(--nst,0px)); --safe-b:max(env(safe-area-inset-bottom),var(--nsb,0px));
   --tabb:max(calc(var(--safe-b) - 12px), 14px);
   --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue","Segoe UI",Roboto,Arial,sans-serif;
   color-scheme:light;

@@ -11,6 +11,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         // Mitteilungen auch zeigen, wenn die App offen ist, und auf Tipps darauf reagieren
         UNUserNotificationCenter.current().delegate = Reminders.shared
         DataStore.shared.cleanTemp()
+        #if DEBUG
+        SelfTest.run()
+        #endif
         return true
     }
 

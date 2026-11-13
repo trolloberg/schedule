@@ -14,3 +14,13 @@ window.__clock = function (wd, hh, mm) {
   window.__off += t - n;
   tick(); render();
 };
+// Ränder messen: was WebKit meldet (env), was die Seite benutzt (--safe-t/--safe-b) und ob die Werte der App noch gesetzt sind
+window.__safe = function () {
+  const pr = document.createElement('div');
+  pr.style.cssText = 'position:fixed;top:0;left:0;width:1px;visibility:hidden;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);margin-top:var(--safe-t);margin-bottom:var(--safe-b)';
+  document.body.appendChild(pr);
+  const cs = getComputedStyle(pr);
+  const out = { env: cs.paddingTop + '/' + cs.paddingBottom, used: cs.marginTop + '/' + cs.marginBottom, nst: document.documentElement.style.getPropertyValue('--nst') || '-', at: Math.round(performance.now()) };
+  pr.remove();
+  return out;
+};

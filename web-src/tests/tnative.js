@@ -224,6 +224,25 @@ const ok = (c, n, extra = '') => { if (c) pass++; else { fail++; console.log('FA
   ok(await p.evaluate(() => D.set.push.on) === 0, 'abgelehnt: bleibt aus');
   ok(/nicht erlaubt/.test(await p.locator('#toast').innerText()), 'Meldung: nicht erlaubt');
   ok((await last('notify')).on === 0, 'nach Ablehnung nichts geplant');
+  // Schalter an, aber iOS wurde nie gefragt (geladenes Backup, neu installierte App): Schalter gehen aus
+  await p.evaluate(() => { D.set.push.on = 1; D.set.push.exp = 1; save(); render(); }); await W(150);
+  ok(await p.locator('[data-a="pushToggle"].on').count() === 1, 'Vorbereitung: Schalter an');
+  await p.evaluate(() => window.__nativeNotify({ rid: 0, granted: false, status: 'notDetermined', n: 0, until: 0 })); await W(300);
+  ok(await p.evaluate(() => D.set.push.on === 0 && D.set.push.exp === 0), 'nie gefragt: Schalter aus');
+  ok(await p.locator('[data-a="pushToggle"].on').count() === 0, 'nie gefragt: Seite zeigt aus');
+  ok(JSON.parse(JSON.parse((await last('save')).env).data ? (await last('save')).env : '{}').data.set.push.on === 0, 'nie gefragt: gespeichert');
+  // Während eine Frage läuft, ändert eine ältere Antwort nichts
+  await W(1500); await clearMsgs();
+  await tap('[data-a="pushToggle"]', 200);
+  nf = await last('notify');
+  await p.evaluate(r => window.__nativeNotify({ rid: r - 1, granted: false, status: 'notDetermined', n: 0, until: 0 }), nf.rid); await W(100);
+  ok(await p.evaluate(() => nAsk !== null), 'Frage läuft weiter');
+  const cnt = (await msgs('notify')).length;
+  ok(await p.evaluate(() => nativeSync()) === 0 && (await msgs('notify')).length === cnt, 'kein Abgleich dazwischen, solange die Frage läuft');
+  await p.evaluate(r => window.__nativeNotify({ rid: r, granted: true, status: 'authorized', n: 5, until: Date.now() + 864e5 }), nf.rid); await W(300);
+  ok(await p.evaluate(() => D.set.push.on) === 1, 'danach erlaubt: an');
+  await tap('[data-a="pushToggle"]', 1500);
+  ok(await p.evaluate(() => D.set.push.on) === 0, 'wieder aus');
 
   /* ---------- 8. Über Schedule ---------- */
   await tap('[data-a="back"]', 500);
@@ -323,6 +342,26 @@ const ok = (c, n, extra = '') => { if (c) pass++; else { fail++; console.log('FA
   ok(sk >= 62, 'Einführung: Überspringen unter der Statusleiste', sk);
   await p.screenshot({ path: SH + 'n10-einfuehrung.png' });
   await tap('.tut [data-a="done"]', 500);
+
+  /* ---------- 11b. Ränder vom Start: Die App gibt sie mit, bis WebKit sie selbst liefert ---------- */
+  await p.evaluate(() => sessionStorage.setItem('info', JSON.stringify({ safe: { t: 62, b: 34 }, build: '1' })));
+  await p.reload(); await W(500);
+  let sf = await p.evaluate(() => ({ nst: document.documentElement.style.getPropertyValue('--nst'), nsb: document.documentElement.style.getPropertyValue('--nsb'),
+    nav: getComputedStyle(document.querySelector('.nav')).paddingTop, tabs: parseFloat(getComputedStyle(document.querySelector('#tabs')).bottom) }));
+  ok(sf.nst === '62px' && sf.nsb === '34px', 'Ränder der App gesetzt', JSON.stringify(sf));
+  ok(sf.nav === '62px', 'Kopfzeile unter der Dynamic Island, ohne dass WebKit etwas liefert', JSON.stringify(sf));
+  ok(sf.tabs === 22, 'Tab-Leiste über dem Home-Balken', JSON.stringify(sf));
+  await p.screenshot({ path: SH + 'n11-raender-vom-start.png' });
+  // ohne Angabe der App (älteres iPhone ohne Rand, Browser): nichts gesetzt
+  await p.evaluate(() => sessionStorage.setItem('info', JSON.stringify({ build: '1' })));
+  await p.reload(); await W(500);
+  sf = await p.evaluate(() => ({ nst: document.documentElement.style.getPropertyValue('--nst'), nav: getComputedStyle(document.querySelector('.nav')).paddingTop }));
+  ok(sf.nst === '' && sf.nav === '0px', 'ohne Angabe bleibt es bei WebKit', JSON.stringify(sf));
+  // unsinnige Angaben richten keinen Schaden an
+  await p.evaluate(() => sessionStorage.setItem('info', JSON.stringify({ safe: { t: 'x', b: -5 } })));
+  await p.reload(); await W(500);
+  ok(await p.evaluate(() => document.documentElement.style.getPropertyValue('--nst')) === '', 'unsinnige Ränder werden ignoriert');
+  await p.evaluate(() => sessionStorage.removeItem('info'));
 
   /* ---------- 12. Im Browser bleibt alles wie bisher ---------- */
   await p.evaluate(() => { sessionStorage.setItem('web', '1'); });

@@ -18,17 +18,27 @@ run() { # Name, Wartezeit in Sekunden, Skript (optional)
   xcrun simctl io "$U" screenshot "$OUT/bilder/$name.png" >/dev/null 2>&1 || echo "Bild fehlgeschlagen: $name"
 }
 
-run 01-erster-start 20
-run 02-heute 11 ci/t2.js
+run 01-erster-start 20 ci/t1.js
+run 02-heute 12 ci/t2.js
 run 03-woche 10 ci/t3.js
 run 04-einstellungen 13 ci/t4.js
-run 05-erlaubnis 11 ci/t5.js
 export SIMCTL_CHILD_SCHEDULE_TEST_PROVISIONAL=1
-run 06-mitteilungen 11 ci/t5.js
+run 05-mitteilungen 12 ci/t5.js
 unset SIMCTL_CHILD_SCHEDULE_TEST_PROVISIONAL
+run 06-tastatur 10 ci/t11.js
+run 07-backup-sichern 11 ci/t8.js
+run 08-backup-laden 11 ci/t9.js
 xcrun simctl ui "$U" appearance dark || true
-run 07-dunkel 10 ci/t7.js
+run 09-dunkel 10 ci/t7.js
 xcrun simctl ui "$U" appearance light || true
+# Home-Bildschirm mit dem App-Symbol
+xcrun simctl terminate "$U" "$B" >/dev/null 2>&1 || true
+sleep 3
+xcrun simctl io "$U" screenshot "$OUT/bilder/10-home-bildschirm.png" >/dev/null 2>&1 || true
+run 11-sicherungen 14 ci/t10.js
+# Alles löschen: Die App muss den Stand von vorher als Sicherung aufheben
+run 12-geleert 8 ci/t12.js
+run 13-nach-dem-leeren 8
 xcrun simctl terminate "$U" "$B" >/dev/null 2>&1 || true
 sleep 1
 

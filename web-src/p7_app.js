@@ -52,6 +52,7 @@ function expPlan(){
 }
 // Plan an die App geben. ask = 'on' oder 'exp': vorher um Erlaubnis fragen (nur direkt nach einem Tipp auf den Schalter).
 function nativeSync(ask){
+  if (!ask && nAsk) return 0;   // Solange iOS noch auf die Antwort wartet, nichts dazwischenschicken
   const p = D.set.push, on = !!(p.on || p.exp || ask);
   nOn = on;
   if (!on){ post('notify', { on: 0, rid: ++nRid }); return nRid; }
@@ -74,6 +75,12 @@ window.__nativeNotify = r => {
   if (!r || typeof r !== 'object') return;
   setPushStatus({ last: Date.now(), n: Math.max(0, +r.n || 0), until: +r.until || 0, st: String(r.status || ''), err: '' });
   if (nAsk && +r.rid === nAsk.rid) nAsk.fin(r);
+  // Schalter stehen auf an, aber iOS wurde auf diesem iPhone noch nie gefragt (geladenes Backup, neu installierte App):
+  // ausschalten, damit das Einschalten die Frage von iOS auslöst und niemand glaubt, es werde schon erinnert
+  else if (!nAsk && !ED.on && String(r.status) === 'notDetermined'){
+    const p = D.set.push;
+    if (p.on || p.exp){ p.on = 0; p.exp = 0; save(); if (ui.tab === 'set' && !stack.length) safe('notify', render); return; }
+  }
   if (ui.tab === 'set' && ui.sub[ui.sub.length - 1] === 'push' && !stack.length) safe('notify', render);
 };
 async function nativeToggle(f){
@@ -465,6 +472,22 @@ if (!NATIVE && 'serviceWorker' in navigator && location.protocol !== 'file:'){
   navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadSW && !reloaded && !stack.length && !ED.on && !$('.tut')){ reloaded = true; location.reload(); } });
 }
 setTimeout(() => { if (NATIVE){ nativeSync(); expHint(); } else if (D.set.push.on) pushSync().catch(() => {}); }, NATIVE ? 1500 : 3000);
+// iPhone-App: Die Ränder vom Start (--nst, --nsb) wieder abgeben, sobald WebKit sie selbst liefert.
+// Danach gilt wie im Browser nur noch env(), auch wenn die Tastatur den unteren Rand verdeckt.
+if (NATIVE && document.documentElement.style.getPropertyValue('--nst')){
+  const root = document.documentElement, pr = document.createElement('i');
+  pr.style.cssText = 'position:fixed;left:-9px;top:0;width:1px;height:0;visibility:hidden;pointer-events:none;padding-top:env(safe-area-inset-top)';
+  document.body.appendChild(pr);
+  const t0 = performance.now();
+  const chk = () => {
+    let live = 0; try { live = parseFloat(getComputedStyle(pr).paddingTop) || 0; } catch (e) {}
+    if (live > 0){ root.style.removeProperty('--nst'); root.style.removeProperty('--nsb'); pr.remove(); return; }
+    const dt = performance.now() - t0;
+    if (dt > 15000){ pr.remove(); return; }   // WebKit liefert nichts: Die Werte der App bleiben
+    if (dt < 1500) requestAnimationFrame(chk); else setTimeout(chk, 300);
+  };
+  chk();
+}
 // iPhone-App: Bescheid geben, dass die Oberfläche steht
 post('ready', { v: APP_VERSION });
 </script>

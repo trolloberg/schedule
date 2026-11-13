@@ -6,6 +6,7 @@ import WebKit
 final class WebViewController: UIViewController {
 
     private var webView: WKWebView!
+    private var started = false          // Das erste Laden ist angestoßen
     private var ready = false            // Die Oberfläche hat sich gemeldet
     private var everReady = false
     private var attempts = 0
@@ -65,12 +66,24 @@ final class WebViewController: UIViewController {
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         center.addObserver(self, selector: #selector(timeChanged), name: UIApplication.significantTimeChangeNotification, object: nil)
+    }
 
-        loadApp()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Erst laden, wenn die Ränder für Dynamic Island und Home-Balken bekannt sind: Die Seite bekommt sie gleich mit
+        // und steht vom ersten Bild an richtig (WebKit selbst teilt sie ihr erst kurz nach dem ersten Bild mit).
+        if !started, view.window != nil {
+            started = true
+            loadApp()
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if !started {
+            started = true
+            loadApp()
+        }
         // Kein Anheben und Ziehen von Bildern wie in Safari
         for sub in webView.scrollView.subviews {
             for interaction in sub.interactions where interaction is UIDragInteraction {
@@ -110,6 +123,11 @@ final class WebViewController: UIViewController {
         if let expiry = AppInfo.expiry {
             info["exp"] = (expiry.timeIntervalSince1970 * 1000).rounded()
         }
+        let insets = view.safeAreaInsets
+        if insets.top > 0 {
+            info["safe"] = ["t": Double(insets.top), "b": Double(insets.bottom)]
+        }
+        TestLog.write("load \(attempts) safe=\(insets.top)/\(insets.bottom)")
         var boot: [String: Any] = ["info": info]
         if let envelope = DataStore.shared.loadEnvelope() {
             boot["env"] = envelope

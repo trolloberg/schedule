@@ -17,8 +17,11 @@
 <script>
 // Hell/Dunkel vor dem ersten Zeichnen setzen, damit nichts aufblitzt
 (function(){var t='auto';try{var d=JSON.parse(localStorage.getItem('sp.data.v1')||'null');if(!d&&window.__nativeBoot&&window.__nativeBoot.env)d=JSON.parse(window.__nativeBoot.env).data;if(d&&d.set&&d.set.theme)t=d.set.theme}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();
+// iPhone-App: Ränder für Dynamic Island und Home-Balken gleich beim Start setzen. WebKit teilt sie der Seite erst
+// kurz nach dem ersten Bild mit, bis dahin gelten die Werte der App (siehe --safe-t). So verrutscht beim Öffnen nichts.
+(function(){try{var s=window.__nativeBoot&&window.__nativeBoot.info&&window.__nativeBoot.info.safe;if(s&&+s.t>0){var r=document.documentElement.style;r.setProperty('--nst',(+s.t)+'px');r.setProperty('--nsb',Math.max(0,+s.b||0)+'px')}}catch(e){}})();
 // Notbremse: Startet die App nicht, wenigstens einen Knopf zum Neuladen zeigen statt einer leeren Seite
-setTimeout(function(){var p=document.getElementById('page');if(p&&!p.firstElementChild)p.innerHTML='<div style="padding:120px 24px;text-align:center;font-size:17px">Schedule konnte nicht starten.<br><br><button style="font:inherit;font-weight:600;color:#fff;background:#007aff;border:0;border-radius:22px;padding:12px 22px" onclick="location.reload()">Neu laden</button></div>';},6000);
+setTimeout(function(){var p=document.getElementById('page');if(p&&!p.firstElementChild)p.innerHTML='<div style="padding:120px 24px;text-align:center;font-size:17px">Schedule konnte nicht starten.<br><br><button style="font:inherit;font-weight:600;color:#fff;background:#007aff;border:0;border-radius:22px;padding:12px 22px" onclick="try{window.webkit.messageHandlers.schedule.postMessage({t:\'reload\'})}catch(e){location.reload()}">Neu laden</button></div>';},6000);
 </script>
 <style>
 :root{
@@ -29,7 +32,7 @@ setTimeout(function(){var p=document.getElementById('page');if(p&&!p.firstElemen
   --glass:rgba(255,255,255,.6); --glass2:rgba(248,248,250,.86); --hi:rgba(255,255,255,.98); --edge:rgba(0,0,0,.13);
   --gshadow:0 8px 28px rgba(0,0,0,.10),0 1px 2px rgba(0,0,0,.05);
   --bar:rgba(242,242,247,.74); --r:24px; --fcard:rgba(255,255,255,.72);
-  --safe-t:env(safe-area-inset-top); --safe-b:env(safe-area-inset-bottom);
+  --safe-t:max(env(safe-area-inset-top),var(--nst,0px)); --safe-b:max(env(safe-area-inset-bottom),var(--nsb,0px));
   --tabb:max(calc(var(--safe-b) - 12px), 14px);
   --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue","Segoe UI",Roboto,Arial,sans-serif;
   color-scheme:light;
@@ -2769,6 +2772,7 @@ function expPlan(){
 }
 // Plan an die App geben. ask = 'on' oder 'exp': vorher um Erlaubnis fragen (nur direkt nach einem Tipp auf den Schalter).
 function nativeSync(ask){
+  if (!ask && nAsk) return 0;   // Solange iOS noch auf die Antwort wartet, nichts dazwischenschicken
   const p = D.set.push, on = !!(p.on || p.exp || ask);
   nOn = on;
   if (!on){ post('notify', { on: 0, rid: ++nRid }); return nRid; }
@@ -2791,6 +2795,12 @@ window.__nativeNotify = r => {
   if (!r || typeof r !== 'object') return;
   setPushStatus({ last: Date.now(), n: Math.max(0, +r.n || 0), until: +r.until || 0, st: String(r.status || ''), err: '' });
   if (nAsk && +r.rid === nAsk.rid) nAsk.fin(r);
+  // Schalter stehen auf an, aber iOS wurde auf diesem iPhone noch nie gefragt (geladenes Backup, neu installierte App):
+  // ausschalten, damit das Einschalten die Frage von iOS auslöst und niemand glaubt, es werde schon erinnert
+  else if (!nAsk && !ED.on && String(r.status) === 'notDetermined'){
+    const p = D.set.push;
+    if (p.on || p.exp){ p.on = 0; p.exp = 0; save(); if (ui.tab === 'set' && !stack.length) safe('notify', render); return; }
+  }
   if (ui.tab === 'set' && ui.sub[ui.sub.length - 1] === 'push' && !stack.length) safe('notify', render);
 };
 async function nativeToggle(f){
@@ -3182,6 +3192,22 @@ if (!NATIVE && 'serviceWorker' in navigator && location.protocol !== 'file:'){
   navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadSW && !reloaded && !stack.length && !ED.on && !$('.tut')){ reloaded = true; location.reload(); } });
 }
 setTimeout(() => { if (NATIVE){ nativeSync(); expHint(); } else if (D.set.push.on) pushSync().catch(() => {}); }, NATIVE ? 1500 : 3000);
+// iPhone-App: Die Ränder vom Start (--nst, --nsb) wieder abgeben, sobald WebKit sie selbst liefert.
+// Danach gilt wie im Browser nur noch env(), auch wenn die Tastatur den unteren Rand verdeckt.
+if (NATIVE && document.documentElement.style.getPropertyValue('--nst')){
+  const root = document.documentElement, pr = document.createElement('i');
+  pr.style.cssText = 'position:fixed;left:-9px;top:0;width:1px;height:0;visibility:hidden;pointer-events:none;padding-top:env(safe-area-inset-top)';
+  document.body.appendChild(pr);
+  const t0 = performance.now();
+  const chk = () => {
+    let live = 0; try { live = parseFloat(getComputedStyle(pr).paddingTop) || 0; } catch (e) {}
+    if (live > 0){ root.style.removeProperty('--nst'); root.style.removeProperty('--nsb'); pr.remove(); return; }
+    const dt = performance.now() - t0;
+    if (dt > 15000){ pr.remove(); return; }   // WebKit liefert nichts: Die Werte der App bleiben
+    if (dt < 1500) requestAnimationFrame(chk); else setTimeout(chk, 300);
+  };
+  chk();
+}
 // iPhone-App: Bescheid geben, dass die Oberfläche steht
 post('ready', { v: APP_VERSION });
 </script>

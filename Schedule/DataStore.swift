@@ -122,6 +122,15 @@ final class DataStore {
         for old in beforeFiles().dropLast(keepBefore) { try? fm.removeItem(at: old) }
     }
 
+    #if DEBUG
+    /// Für die automatische Prüfung: wie viele Sicherungen erkannt werden
+    func debugCounts() -> String {
+        queue.sync { () -> String in
+            "daily=\(self.dailyFiles().count) before=\(self.beforeFiles().count)"
+        }
+    }
+    #endif
+
     // MARK: Aufräumen
 
     /// Backups, die fürs Teilen im temporären Ordner lagen, beim Start entfernen

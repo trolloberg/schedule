@@ -20,6 +20,8 @@ final class Reminders: NSObject {
     var onOpen: (() -> Void)?
 
     private let center = UNUserNotificationCenter.current()
+    /// Ein Abgleich nach dem anderen: Der Plan wird immer ganz ersetzt, zwei gleichzeitige Abgleiche würden sich vermischen
+    private let work = DispatchQueue(label: "schedule.reminders", qos: .userInitiated)
     private let prefix = "plan."
     private let hintId = "plan.hint"
     private let maxPlanned = 62
@@ -31,6 +33,18 @@ final class Reminders: NSObject {
     ///   - ask: true fragt um Erlaubnis, falls noch nicht entschieden (nur direkt nach einem Tipp auf den Schalter)
     ///   - hint: Text einer letzten Mitteilung, die ans Öffnen der App erinnert, wenn nicht alles in den Plan passt
     func sync(on: Bool, ask: Bool, items: [Item], hint: String, done: @escaping @Sendable ([String: Any]) -> Void) {
+        work.async {
+            let gate = DispatchSemaphore(value: 0)
+            self.run(on: on, ask: ask, items: items, hint: hint) { result in
+                done(result)
+                gate.signal()
+            }
+            // Nicht ewig warten: Bei der Frage um Erlaubnis kommt die Antwort erst, wenn getippt wurde
+            _ = gate.wait(timeout: .now() + 15)
+        }
+    }
+
+    private func run(on: Bool, ask: Bool, items: [Item], hint: String, done: @escaping @Sendable ([String: Any]) -> Void) {
         center.getNotificationSettings { settings in
             let status = settings.authorizationStatus
             guard on else {

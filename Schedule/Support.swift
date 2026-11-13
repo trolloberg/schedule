@@ -73,8 +73,14 @@ enum AppInfo {
     /// mit Entwicklerkonto ein Jahr. Im Simulator und ohne Profil gibt es keinen Ablauf.
     static let expiry: Date? = {
         guard let url = Bundle.main.url(forResource: "embedded", withExtension: "mobileprovision"),
-              let data = try? Data(contentsOf: url),
-              let start = data.range(of: Data("<?xml".utf8)),
+              let data = try? Data(contentsOf: url)
+        else { return nil }
+        return expiryDate(inProfile: data)
+    }()
+
+    /// Liest das Ablaufdatum aus einem Bereitstellungsprofil. Das ist eine signierte Datei, in der eine lesbare Liste steckt.
+    static func expiryDate(inProfile data: Data) -> Date? {
+        guard let start = data.range(of: Data("<?xml".utf8)),
               let end = data.range(of: Data("</plist>".utf8), options: [], in: start.lowerBound..<data.endIndex)
         else { return nil }
         let xml = data.subdata(in: start.lowerBound..<end.upperBound)
@@ -82,7 +88,7 @@ enum AppInfo {
               let dict = plist as? [String: Any]
         else { return nil }
         return dict["ExpirationDate"] as? Date
-    }()
+    }
 }
 
 /// Protokoll für die automatische Prüfung im Simulator (nur in Debug-Builds)
@@ -102,3 +108,30 @@ enum TestLog {
         #endif
     }
 }
+
+#if DEBUG
+/// Kleine Selbstprüfung für die automatische Prüfung im Simulator (nur in Debug-Builds)
+enum SelfTest {
+    static func run() {
+        // Ablaufdatum: nachgebaute Profil-Datei mit Binärdaten vor und hinter der Liste, wie bei einer echten
+        let xml = [
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+            "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">",
+            "<plist version=\"1.0\">",
+            "<dict>",
+            "<key>AppIDName</key><string>Schedule</string>",
+            "<key>ExpirationDate</key><date>2026-11-19T10:00:00Z</date>",
+            "<key>TimeToLive</key><integer>7</integer>",
+            "</dict>",
+            "</plist>"
+        ].joined(separator: "\n")
+        var blob = Data([0x30, 0x82, 0x1f, 0x00, 0x06, 0x09, 0x2a, 0x86])
+        blob.append(Data(xml.utf8))
+        blob.append(Data([0xa0, 0x82, 0x0d, 0x00, 0xff, 0x00, 0x31, 0x82]))
+        let seconds = AppInfo.expiryDate(inProfile: blob).map { Int($0.timeIntervalSince1970) } ?? -1
+        let verdict = seconds == 1_795_082_400 ? "ok" : "FALSCH"
+        TestLog.write("selftest expiry \(seconds) \(verdict)")
+        TestLog.write("selftest files \(DataStore.shared.debugCounts())")
+    }
+}
+#endif
