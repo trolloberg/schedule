@@ -2,6 +2,7 @@
 (function () {
   const out = { step: 't9' };
   try {
+    __skipTut();
     switchTab('set');
     const inp = document.querySelector('#imp'); out.input = !!inp; out.accept = inp && inp.accept;
     if (inp) inp.click();

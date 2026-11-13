@@ -1,7 +1,8 @@
 name: iOS-App bauen
 
-# Baut die iPhone-App, prüft sie im Simulator und legt die fertige App-Datei (Schedule.ipa)
-# zusammen mit Bildschirmfotos und Protokollen im Zweig "ios-build" ab.
+# Baut die iPhone-App und die fertige App-Datei (Schedule.ipa), prüft die App im Simulator und legt
+# App-Datei, Bildschirmfotos und Protokolle im Zweig "ios-build" ab. Die App-Datei entsteht vor der
+# Simulator-Prüfung: Bleibt der Simulator hängen, ist sie trotzdem da.
 
 on:
   push:
@@ -53,25 +54,6 @@ jobs:
           grep -E "warning:" out/log/build-sim.log | sort -u | head -60 || true
           ls -la build/sim/Build/Products/Debug-iphonesimulator/Schedule.app
 
-      - name: Simulator starten
-        id: sim
-        continue-on-error: true
-        timeout-minutes: 12
-        run: |
-          UDID=$(xcrun simctl list devices available -j | python3 ci/pick_device.py "$DEVICE_NAME")
-          echo "UDID=$UDID" >> "$GITHUB_ENV"
-          xcrun simctl list devices available | grep "$UDID" | tee -a out/log/umgebung.txt
-          xcrun simctl boot "$UDID"
-          xcrun simctl bootstatus "$UDID" -b
-          xcrun simctl status_bar "$UDID" override --time "9:41" --batteryState charged --batteryLevel 100 --wifiBars 3 --cellularBars 4 || true
-          xcrun simctl install "$UDID" build/sim/Build/Products/Debug-iphonesimulator/Schedule.app
-
-      - name: App im Simulator prüfen
-        if: steps.sim.outcome == 'success'
-        continue-on-error: true
-        timeout-minutes: 12
-        run: bash ci/simtest.sh
-
       - name: App-Datei für das iPhone bauen (IPA)
         run: |
           set -o pipefail
@@ -102,6 +84,25 @@ jobs:
             echo "== Inhalt"; (cd build/ipa && find Payload -type f -exec ls -l {} \;)
           } > out/log/ipa.txt 2>&1
           cat out/log/ipa.txt
+
+      - name: Simulator starten
+        id: sim
+        continue-on-error: true
+        timeout-minutes: 12
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 ci/pick_device.py "$DEVICE_NAME")
+          echo "UDID=$UDID" >> "$GITHUB_ENV"
+          xcrun simctl list devices available | grep "$UDID" | tee -a out/log/umgebung.txt
+          xcrun simctl boot "$UDID"
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl status_bar "$UDID" override --time "9:41" --batteryState charged --batteryLevel 100 --wifiBars 3 --cellularBars 4 || true
+          xcrun simctl install "$UDID" build/sim/Build/Products/Debug-iphonesimulator/Schedule.app
+
+      - name: App im Simulator prüfen
+        if: steps.sim.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 16
+        run: bash ci/simtest.sh
 
       - name: Ergebnisse im Zweig ios-build ablegen
         if: always()

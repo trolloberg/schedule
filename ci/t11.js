@@ -1,7 +1,11 @@
 // Tastatur: To-Do hinzufügen öffnen und ins Feld tippen. Das Blatt muss über der Tastatur lesbar bleiben.
+// Läuft als Letztes, nach „Alles löschen“: lädt sich deshalb die Beispielwoche selbst.
 (function () {
   const out = { step: 't11' };
   try {
+    __skipTut();
+    if (!D.slots.length) loadSample();
+    out.slots = D.slots.length;
     __clock(1, 9, 12);
     if (ui.tab !== 'day') switchTab('day');
     const add = document.querySelector('[data-a="fAdd"]'); out.button = !!add;

@@ -24,3 +24,5 @@ window.__safe = function () {
   pr.remove();
   return out;
 };
+// Einführung schließen, falls sie offen ist (nach „Alles löschen“ erscheint sie wieder)
+window.__skipTut = function () { const t = document.querySelector('.tut'); if (t && t._on) t._on.done(); };
