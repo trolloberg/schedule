@@ -1,3 +1,3 @@
 -rw-r--r--  1 runner  staff  2615 Nov 13 09:56 Documents/Sicherungen/schedule-2026-11-13-0956-vorher.json
--rw-r--r--  1 runner  staff  297 Nov 13 09:56 Documents/Sicherungen/schedule-2026-11-13.json
--rw-r--r--  1 runner  staff  297 Nov 13 09:56 Library/Application Support/Schedule/daten.json
+-rw-r--r--  1 runner  staff  2236 Nov 13 09:58 Documents/Sicherungen/schedule-2026-11-13.json
+-rw-r--r--  1 runner  staff  2236 Nov 13 09:58 Library/Application Support/Schedule/daten.json

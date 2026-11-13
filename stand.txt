@@ -1,1 +1,1 @@
-Commit 9676cdca7d8178fc67caefd34627702f47ce75bf, Lauf 43403859007, Stand: App geprüft
+Commit 9676cdca7d8178fc67caefd34627702f47ce75bf, Lauf 43403859007, Stand: Ende

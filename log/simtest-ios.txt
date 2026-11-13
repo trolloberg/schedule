@@ -1,0 +1,9 @@
+io.github.trolloberg.schedule: 20078
+[6 s] gestartet: 10-backup-laden (Start dauerte 4 s, Last { 315.82 356.03 213.24 })
+io.github.trolloberg.schedule: 20837
+[28 s] gestartet: 11-backup-sichern (Start dauerte 3 s, Last { 286.50 345.82 213.69 })
+io.github.trolloberg.schedule: 21752
+[52 s] gestartet: 12-tastatur (Start dauerte 4 s, Last { 294.01 343.41 215.87 })
+io.github.trolloberg.schedule: 22184
+[115 s] gestartet: 13-sicherungen (Start dauerte 1 s, Last { 369.30 357.08 230.45 })
+ci/simtest.sh: line 129: PARTâ: unbound variable

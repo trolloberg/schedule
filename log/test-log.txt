@@ -58,3 +58,31 @@ selftest files daily=1 before=1
 load 1 safe=62.0/34.0
 ready 4.0.0
 notify provisional n=0
+selftest expiry 1795082400 ok
+selftest files daily=1 before=1
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t9","input":true,"accept":".json,application/json"}
+notify provisional n=0
+notify provisional n=0
+selftest expiry 1795082400 ok
+selftest files daily=1 before=1
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t8"}
+notify provisional n=0
+selftest expiry 1795082400 ok
+selftest files daily=1 before=1
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t11","slots":11,"button":true,"field":true,"active":"nt"}
+notify provisional n=0
+js {"step":"t11-later","active":"nt","inner":874,"vv":"471@0","scrollY":0,"safe":{"env":"62px/34px","used":"62px/34px","nst":"-","at":3679}}
+notify provisional n=0
+selftest expiry 1795082400 ok
+selftest files daily=1 before=1
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t10"}
+notify provisional n=0
+js {"step":"t10-later","toast":"","hidden":false}
