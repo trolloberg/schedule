@@ -15,9 +15,9 @@ pid=$!
 n=0; t0=$SECONDS
 while [ ! -f "$fertig" ] && [ "$n" -lt "$secs" ]; do sleep 2; n=$((SECONDS - t0)); done
 if [ -f "$fertig" ]; then
-  echo "Prüfung „$part“ fertig nach $n s."
+  echo "Prüfung „${part}“ fertig nach $n s."
 else
-  echo "Prüfung „$part“ nach $n s nicht fertig: wird beendet, der Bau geht weiter."
+  echo "Prüfung „${part}“ nach $n s nicht fertig: wird beendet, der Bau geht weiter."
   echo "abgebrochen nach $n s" >> "$log"
   # Zustand des Rechners festhalten: Was läuft, was steht? Losgelöst, damit auch das den Schritt nicht aufhält.
   # Bewusst nur die Namen der Programme (ohne Argumente), dazu die Aufrufe von simctl.

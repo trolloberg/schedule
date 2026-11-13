@@ -126,7 +126,7 @@ fi
 
 # Das Protokoll liegt auf der Platte des Macs: Es lässt sich auch einsammeln, wenn der Simulator nicht mehr antwortet
 keep
-say "Teil „$PART“ zu Ende"
+say "Teil „${PART}“ zu Ende"
 echo "---- Prüfprotokoll ----"
 cat "$OUT/log/test-log.txt" 2>/dev/null || echo "kein Prüfprotokoll gefunden"
 echo "---- Dateien der App ----"
