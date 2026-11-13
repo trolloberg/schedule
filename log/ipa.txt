@@ -1,0 +1,95 @@
+== Datei
+-rw-r--r--  1 runner  staff  468895 Nov 13 09:45 out/Schedule.ipa
+6990aed5c6defc4d922715b13e70a4b5b8946691c8ed9c49b98aeb87006a8793  out/Schedule.ipa
+== Architektur
+arm64
+== Info.plist
+{
+  "BuildMachineOSBuild" => "25G332"
+  "CADisableMinimumFrameDurationOnPhone" => true
+  "CFBundleAllowMixedLocalizations" => true
+  "CFBundleDevelopmentRegion" => "de"
+  "CFBundleDisplayName" => "Schedule"
+  "CFBundleExecutable" => "Schedule"
+  "CFBundleIcons" => {
+    "CFBundlePrimaryIcon" => {
+      "CFBundleIconFiles" => [
+        0 => "AppIcon60x60"
+      ]
+      "CFBundleIconName" => "AppIcon"
+    }
+  }
+  "CFBundleIcons~ipad" => {
+    "CFBundlePrimaryIcon" => {
+      "CFBundleIconFiles" => [
+        0 => "AppIcon60x60"
+        1 => "AppIcon76x76"
+      ]
+    }
+  }
+  "CFBundleIdentifier" => "io.github.trolloberg.schedule"
+  "CFBundleInfoDictionaryVersion" => "6.0"
+  "CFBundleLocalizations" => [
+    0 => "de"
+    1 => "en"
+  ]
+  "CFBundleName" => "Schedule"
+  "CFBundlePackageType" => "APPL"
+  "CFBundleShortVersionString" => "4.0.0"
+  "CFBundleSupportedPlatforms" => [
+    0 => "iPhoneOS"
+  ]
+  "CFBundleVersion" => "1"
+  "DTCompiler" => "com.apple.compilers.llvm.clang.1_0"
+  "DTPlatformBuild" => "23F81a"
+  "DTPlatformName" => "iphoneos"
+  "DTPlatformVersion" => "26.5"
+  "DTSDKBuild" => "23F81a"
+  "DTSDKName" => "iphoneos26.5"
+  "DTXcode" => "2660"
+  "DTXcodeBuild" => "17F113"
+  "ITSAppUsesNonExemptEncryption" => false
+  "LSRequiresIPhoneOS" => true
+  "LSSupportsOpeningDocumentsInPlace" => true
+  "MinimumOSVersion" => "17.0"
+  "UIApplicationSceneManifest" => {
+    "UIApplicationSupportsMultipleScenes" => false
+    "UISceneConfigurations" => {
+      "UIWindowSceneSessionRoleApplication" => [
+        0 => {
+          "UISceneConfigurationName" => "Default Configuration"
+          "UISceneDelegateClassName" => "Schedule.SceneDelegate"
+        }
+      ]
+    }
+  }
+  "UIDeviceFamily" => [
+    0 => 1
+  ]
+  "UIFileSharingEnabled" => true
+  "UILaunchScreen" => {
+    "UIColorName" => "LaunchBG"
+  }
+  "UIRequiredDeviceCapabilities" => [
+    0 => "arm64"
+  ]
+  "UISupportedInterfaceOrientations" => [
+    0 => "UIInterfaceOrientationPortrait"
+  ]
+  "UIViewControllerBasedStatusBarAppearance" => true
+}
+== Signatur
+build/ios/Build/Products/Release-iphoneos/Schedule.app: code object is not signed at all
+== Symbole im Asset-Katalog
+   2     "Name" : "AppIcon",
+   2     "Name" : "LaunchBG",
+   1     "RenditionName" : "AppIcon.png",
+== Inhalt
+-rwxr-xr-x  1 runner  staff  306944 Nov 13 09:45 Payload/Schedule.app/Schedule
+-rw-r--r--  1 runner  staff  11788 Nov 13 09:45 Payload/Schedule.app/AppIcon60x60@2x.png
+-rw-r--r--  1 runner  staff  339334 Nov 13 09:45 Payload/Schedule.app/www/index.html
+-rw-r--r--  1 runner  staff  12886 Nov 13 09:45 Payload/Schedule.app/www/apple-touch-icon.png
+-rw-r--r--  1 runner  staff  251256 Nov 13 09:45 Payload/Schedule.app/Assets.car
+-rw-r--r--  1 runner  staff  15952 Nov 13 09:45 Payload/Schedule.app/AppIcon76x76@2x~ipad.png
+-rw-r--r--  1 runner  staff  1683 Nov 13 09:45 Payload/Schedule.app/Info.plist
+-rw-r--r--  1 runner  staff  8 Nov 13 09:45 Payload/Schedule.app/PkgInfo

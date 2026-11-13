@@ -1,0 +1,365 @@
+Command line invocation:
+    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/xcodebuild build -project Schedule.xcodeproj -scheme Schedule -configuration Release -sdk iphoneos -destination generic/platform=iOS -derivedDataPath build/ios CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=
+
+Build settings from command line:
+    CODE_SIGN_IDENTITY = 
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+    SDKROOT = iphoneos26.5
+
+note: Using codesigning identity override: 
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'Schedule' in project 'Schedule' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 480e6817b51f03153014716056c4b20c
+Build description path: /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/XCBuildData/480e6817b51f03153014716056c4b20c.xcbuilddata
+ClangStatCache /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk /Users/runner/work/schedule/schedule/build/ios/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -o /Users/runner/work/schedule/schedule/build/ios/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache
+
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/ios/Build/Products
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/ios/Build/Products
+
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule-4688ba4d18ae4dd2dc340fa8d5848e31-VFS-iphoneos/all-product-headers.yaml
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule-4688ba4d18ae4dd2dc340fa8d5848e31-VFS-iphoneos/all-product-headers.yaml
+
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos
+
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule.DependencyStaticMetadataFileList (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule.DependencyMetadataFileList (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-project-headers.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-own-target-headers.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-generated-files.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-all-target-headers.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-all-non-framework-target-headers.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule_const_extract_protocols.json (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.SwiftConstValuesFileList (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.LinkFileList (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-OutputFileMap.json (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-OutputFileMap.json
+
+MkDir /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /bin/mkdir -p /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app
+
+MkDir /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_output/unthinned (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /bin/mkdir -p /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_output/unthinned
+
+MkDir /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_output/thinned (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /bin/mkdir -p /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_output/thinned
+
+GenerateAssetSymbols /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/actool /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets --compile /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_dependencies --output-partial-info-plist /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_generated_info.plist --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --development-region de --target-device iphone --minimum-deployment-target 17.0 --platform iphoneos --bundle-identifier io.github.trolloberg.schedule --generate-swift-asset-symbol-extensions NO --generate-swift-asset-symbols /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+CpResource /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/www /Users/runner/work/schedule/schedule/Schedule/www (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/schedule/schedule/Schedule/www /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app
+
+CompileAssetCatalogVariant thinned /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/actool /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets --compile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --development-region de --target-device iphone --minimum-deployment-target 17.0 --platform iphoneos
+/* com.apple.actool.compilation-results */
+/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_generated_info.plist_thinned
+/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_output/thinned/AppIcon60x60@2x.png
+/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_output/thinned/AppIcon76x76@2x~ipad.png
+/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_output/thinned/Assets.car
+
+
+SwiftDriver Schedule normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-SwiftDriver -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Schedule -O -whole-module-optimization @/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -target arm64-apple-ios17.0 -g -module-cache-path /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos -F /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/work/schedule/schedule/build/ios/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -output-file-map /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-generated-files.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-own-target-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-project-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-Swift.h -working-directory /Users/runner/work/schedule/schedule -no-emit-module-separately-wmo
+
+SwiftDriver\ Compilation Schedule normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-Swift-Compilation -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Schedule -O -whole-module-optimization @/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -target arm64-apple-ios17.0 -g -module-cache-path /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos -F /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/work/schedule/schedule/build/ios/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -output-file-map /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-generated-files.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-own-target-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-project-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-Swift.h -working-directory /Users/runner/work/schedule/schedule -no-emit-module-separately-wmo
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_float-86UWEIRIZBNJPZL5WETOFMS8Y.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_stdarg-7VM8EFWOHJHOIPJUVL8URF9G9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/ptrcheck-E2GM54T5ZF6627Z0A68NY0VDU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_AvailabilityInternal-63CA5VNZTRKQO18ZRTNUKGJKU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_stdbool-DPTOARVQV2769ZRPSBUQWB1JM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/ptrauth-DOD5P6VTZPFHLC9YXXXGM5FCP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_DarwinFoundation1-BWJTIN6J0434ILFVJ91WHROZX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/SwiftShims-7MLZ43QURLBYFH3F3FSL44YSJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/DeveloperToolsSupport-169AC6DUUH8XJFG4O5GHKJP4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_SwiftConcurrencyShims-BTIQAK3PHMY76A472K5X9BNRD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_limits-2GF5KC7KHYHJGW2NCSDBOMBKT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_stddef-8UANAQ56KLTHTXSEHF48UJD4Q.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_DarwinFoundation2-99V1D4F9MFKPYUFSSL3VZBZ3X.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/sys_types-BA172PK6143JKFU35RD7BR6HB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_tgmath-EU5XXRYR2FA1BTAOK8KGTH62R.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_stdint-2QYWGCORCA92ENJT39M4B43A.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_intrinsics-BGP8I757599WQ3MLAPNSVL9I2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_DarwinFoundation3-E2SE3P59F1D7DFES6WKNMIB9L.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_stdatomic-BVPVEFN7GAC87V0KWUZZQIK46.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_inttypes-JD7HLNNFXUAOIN2XHJ1YR4NM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/simd-19MBEE7P82ZXUIC37BQB0349Y.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Darwin-57L4BFK6D86K7NN1T28U75XY6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/ObjectiveC-3H8JJX1ATNEIGHOZSTYFR01PV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/MachO-5WSU4ZWNIPMHD2P5IUWTF54XJ.pcm
+
+LinkAssetCatalog /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-linkAssetCatalog --thinned /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_output/thinned --thinned-dependencies /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_generated_info.plist_unthinned --output /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app --plist-output /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Assets.car (in target 'Schedule' from project 'Schedule')
+note: Emplaced /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/AppIcon60x60@2x.png (in target 'Schedule' from project 'Schedule')
+note: Emplaced /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/AppIcon76x76@2x~ipad.png (in target 'Schedule' from project 'Schedule')
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/os_object-167AEZ0W3JZQPNZHWL8S2BNF6.pcm
+
+ProcessInfoPlistFile /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Info.plist /Users/runner/work/schedule/schedule/Schedule/Info.plist (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-infoPlistUtility /Users/runner/work/schedule/schedule/Schedule/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/assetcatalog_generated_info.plist -requiredArchitecture arm64 -o /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Info.plist
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/os_workgroup-D2HILNTHJGK04X54U0SEQWUT0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Dispatch-EY66FGFVHBIFBGNSHEULGBHRK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Spatial-83KZVRU5L55AONUK1TRY8KJ02.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/dnssd-C5B2IYPEVFFS00U1NQFZ72L1B.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/XPC-27JEI6TID00YQ4Z2T3XM6PHKB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreFoundation-3LHLJIJO81HP53WYKGN7VUHGZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/os-7V6ORDFSQXVD0Z5E1D23NJJGC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CFNetwork-7Z84BW480SVIIG8UC80SBG392.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreGraphics-F1ABD2X1KV90D64MQWSCGVIED.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Security-2JD4LN8BWUA97PVHOMGWDQ498.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Foundation-8U4PA2OVD21BUW05ZKECP8TIQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreText-7H4O6MKHLWLEBS6IGWURTPTJM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/ImageIO-5Y291QOOMD1KHQO98NHXX8W6S.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/OSLog-AXWCIGVMP9AV3FKJ2GZFAM1GB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/UniformTypeIdentifiers-73PQNJB7CVRJZITMEH2Q1PNWC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/FileProvider-7VW4M0032HI1XU1DXI63P5HPP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/DataDetection-CLAU8WJZPNR3HG1HWYT8HVIRX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/UIUtilities-B858V06ZRX99M3FPULVILV920.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreTransferable-F3NOFSGKK6J46CL7WD0STNN2K.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Accessibility-4JYM1DI8RBZFAB4R7RV09NUU4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/UserNotifications-5YA34515CUZGNL3HQ1DMN6GIL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Symbols-C317519WXP9CSOLLKLXVDBEMH.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/IOSurface-IHAAN09Q6TUY2PKJFCSKX0NC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Network-EZDDLMH8W2MNPPPOET45EHTMY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Metal-BHBRS3GA2J22J7ALS0GI88MGS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/OpenGLES-64GBWNVFBRNQMG2KC5JT3W9G9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreVideo-6XCEL4SFOZ37UM294F6C68AWD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreImage-AESY8POA1EH4XDASRX0WAVM5X.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/QuartzCore-DZ4ZEUA0YBNCE791E7I4R13O0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/SwiftUICore-4R39AIKI8NJIBVAB0KW0IPBMN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/UIKit-6ZHC9WP1EGUJGDEH3R20QDDO0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/WebKit-ANMLXYMT5GC4QBCHFPNMZ9YR8.pcm
+
+SwiftCompile normal arm64 Compiling\ AppDelegate.swift,\ SceneDelegate.swift,\ WebViewController.swift,\ BundleSchemeHandler.swift,\ DataStore.swift,\ Reminders.swift,\ Support.swift,\ GeneratedAssetSymbols.swift /Users/runner/work/schedule/schedule/Schedule/AppDelegate.swift /Users/runner/work/schedule/schedule/Schedule/SceneDelegate.swift /Users/runner/work/schedule/schedule/Schedule/WebViewController.swift /Users/runner/work/schedule/schedule/Schedule/BundleSchemeHandler.swift /Users/runner/work/schedule/schedule/Schedule/DataStore.swift /Users/runner/work/schedule/schedule/Schedule/Reminders.swift /Users/runner/work/schedule/schedule/Schedule/Support.swift /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/GeneratedAssetSymbols.swift /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Symbols.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Combine.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_Concurrency.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Foundation.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/ObjectiveC.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreTransferable.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Metal.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreText.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/DataDetection.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/WebKit.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreImage.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/UIKit.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/DeveloperToolsSupport.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreVideo.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreGraphics.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/System.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/os.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/simd.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_DarwinFoundation3.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_Builtin_float.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Accessibility.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Distributed.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/XPC.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Dispatch.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreFoundation.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Network.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/OSLog.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/UniformTypeIdentifiers.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/QuartzCore.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_DarwinFoundation1.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Spatial.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Swift.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Observation.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_StringProcessing.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_DarwinFoundation2.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/FileProvider.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/SwiftUICore.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Darwin.swiftmodule/arm64e-apple-ios.swiftmodule /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_limits-2GF5KC7KHYHJGW2NCSDBOMBKT.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/simd-19MBEE7P82ZXUIC37BQB0349Y.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/OpenGLES-64GBWNVFBRNQMG2KC5JT3W9G9.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Security-2JD4LN8BWUA97PVHOMGWDQ498.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/os_workgroup-D2HILNTHJGK04X54U0SEQWUT0.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_inttypes-JD7HLNNFXUAOIN2XHJ1YR4NM.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/UserNotifications-5YA34515CUZGNL3HQ1DMN6GIL.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_stdatomic-BVPVEFN7GAC87V0KWUZZQIK46.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_stdarg-7VM8EFWOHJHOIPJUVL8URF9G9.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/UIKit-6ZHC9WP1EGUJGDEH3R20QDDO0.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreImage-AESY8POA1EH4XDASRX0WAVM5X.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/ptrcheck-E2GM54T5ZF6627Z0A68NY0VDU.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/sys_types-BA172PK6143JKFU35RD7BR6HB.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Darwin-57L4BFK6D86K7NN1T28U75XY6.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/WebKit-ANMLXYMT5GC4QBCHFPNMZ9YR8.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/XPC-27JEI6TID00YQ4Z2T3XM6PHKB.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/UIUtilities-B858V06ZRX99M3FPULVILV920.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_AvailabilityInternal-63CA5VNZTRKQO18ZRTNUKGJKU.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_tgmath-EU5XXRYR2FA1BTAOK8KGTH62R.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_DarwinFoundation2-99V1D4F9MFKPYUFSSL3VZBZ3X.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/DataDetection-CLAU8WJZPNR3HG1HWYT8HVIRX.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreFoundation-3LHLJIJO81HP53WYKGN7VUHGZ.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_SwiftConcurrencyShims-BTIQAK3PHMY76A472K5X9BNRD.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_float-86UWEIRIZBNJPZL5WETOFMS8Y.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreTransferable-F3NOFSGKK6J46CL7WD0STNN2K.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/os_object-167AEZ0W3JZQPNZHWL8S2BNF6.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/MachO-5WSU4ZWNIPMHD2P5IUWTF54XJ.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Symbols-C317519WXP9CSOLLKLXVDBEMH.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_stdbool-DPTOARVQV2769ZRPSBUQWB1JM.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/ObjectiveC-3H8JJX1ATNEIGHOZSTYFR01PV.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/QuartzCore-DZ4ZEUA0YBNCE791E7I4R13O0.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/ptrauth-DOD5P6VTZPFHLC9YXXXGM5FCP.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Metal-BHBRS3GA2J22J7ALS0GI88MGS.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/UniformTypeIdentifiers-73PQNJB7CVRJZITMEH2Q1PNWC.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/IOSurface-IHAAN09Q6TUY2PKJFCSKX0NC.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/ImageIO-5Y291QOOMD1KHQO98NHXX8W6S.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Accessibility-4JYM1DI8RBZFAB4R7RV09NUU4.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Dispatch-EY66FGFVHBIFBGNSHEULGBHRK.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/dnssd-C5B2IYPEVFFS00U1NQFZ72L1B.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreText-7H4O6MKHLWLEBS6IGWURTPTJM.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreVideo-6XCEL4SFOZ37UM294F6C68AWD.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/SwiftUICore-4R39AIKI8NJIBVAB0KW0IPBMN.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_stddef-8UANAQ56KLTHTXSEHF48UJD4Q.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Spatial-83KZVRU5L55AONUK1TRY8KJ02.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Foundation-8U4PA2OVD21BUW05ZKECP8TIQ.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_stdint-2QYWGCORCA92ENJT39M4B43A.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/DeveloperToolsSupport-169AC6DUUH8XJFG4O5GHKJP4.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Network-EZDDLMH8W2MNPPPOET45EHTMY.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/os-7V6ORDFSQXVD0Z5E1D23NJJGC.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/FileProvider-7VW4M0032HI1XU1DXI63P5HPP.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CFNetwork-7Z84BW480SVIIG8UC80SBG392.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_DarwinFoundation3-E2SE3P59F1D7DFES6WKNMIB9L.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/SwiftShims-7MLZ43QURLBYFH3F3FSL44YSJ.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_DarwinFoundation1-BWJTIN6J0434ILFVJ91WHROZX.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/CoreGraphics-F1ABD2X1KV90D64MQWSCGVIED.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/OSLog-AXWCIGVMP9AV3FKJ2GZFAM1GB.pcm /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/_Builtin_intrinsics-BGP8I757599WQ3MLAPNSVL9I2.pcm /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-dependencies-1.json (in target 'Schedule' from project 'Schedule')
+
+CompileSwift normal arm64 (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling AppDelegate.swift, SceneDelegate.swift, WebViewController.swift, BundleSchemeHandler.swift, DataStore.swift, Reminders.swift, Support.swift, GeneratedAssetSymbols.swift (in target 'Schedule' from project 'Schedule')
+
+SwiftDriver\ Compilation\ Requirements Schedule normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Schedule -O -whole-module-optimization @/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -target arm64-apple-ios17.0 -g -module-cache-path /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos -F /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/work/schedule/schedule/build/ios/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -output-file-map /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/schedule/schedule/build/ios/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-generated-files.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-own-target-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule-project-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-Swift.h -working-directory /Users/runner/work/schedule/schedule -no-emit-module-separately-wmo
+
+SwiftMergeGeneratedHeaders /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/Schedule-Swift.h /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-Swift.h (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-swiftHeaderTool -arch arm64 /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-Swift.h -o /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/DerivedSources/Schedule-Swift.h
+
+Copy /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.swiftmodule/arm64-apple-ios.swiftmodule /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.swiftmodule/arm64-apple-ios.swiftmodule
+
+Copy /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.swiftmodule/arm64-apple-ios.swiftdoc /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.swiftdoc (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.swiftdoc /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.swiftmodule/arm64-apple-ios.swiftdoc
+
+Copy /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.swiftmodule/arm64-apple-ios.abi.json /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.abi.json (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.abi.json /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.swiftmodule/arm64-apple-ios.abi.json
+
+Copy /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.swiftsourceinfo (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.swiftsourceinfo /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo
+
+Ld /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Schedule normal (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -Os -L/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -L/Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos -F/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -F/Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos -filelist /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule_lto.o -Xlinker -dependency_info -Xlinker /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule @/Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule-linker-args.resp -o /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Schedule
+
+ExtractAppIntentsMetadata (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.D58uBr/Metal.xctoolchain --module-name Schedule --sdk-root /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk --xcode-version 17F113 --platform-family iOS --deployment-target 17.0 --bundle-identifier io.github.trolloberg.schedule --output /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app --target-triple arm64-apple-ios17.0 --binary-file /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Schedule --dependency-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule_dependency_info.dat --stringsdata-file /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList --metadata-file-list /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Objects-normal/arm64/Schedule.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-11-13 09:45:39.273 appintentsmetadataprocessor[2365:10515] Starting appintentsmetadataprocessor export
+2026-11-13 09:45:39.277 appintentsmetadataprocessor[2365:10515] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+GenerateDSYMFile /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app.dSYM /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Schedule (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Schedule -o /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app.dSYM
+
+CopySwiftLibs /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Schedule --scan-folder /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Frameworks --scan-folder /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/PlugIns --scan-folder /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/SystemExtensions --scan-folder /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Extensions --platform iphoneos --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.D58uBr/Metal.xctoolchain --toolchain /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
+Ignoring --strip-bitcode because --sign was not passed
+
+AppIntentsSSUTraining (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Info.plist --temp-dir-path /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/ssu --bundle-id io.github.trolloberg.schedule --product-path /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app --extracted-metadata-path /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Metadata.appintents --metadata-file-list /Users/runner/work/schedule/schedule/build/ios/Build/Intermediates.noindex/Schedule.build/Release-iphoneos/Schedule.build/Schedule.DependencyMetadataFileList --source-file /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app/Info.plist --archive-ssu-assets
+2026-11-13 09:45:39.308 appintentsnltrainingprocessor[2367:10517] Parsing options for appintentsnltrainingprocessor
+2026-11-13 09:45:39.309 appintentsnltrainingprocessor[2367:10517] Starting AppIntents SSU YAML Generation
+2026-11-13 09:45:39.309 appintentsnltrainingprocessor[2367:10517] No AppShortcuts found - Skipping.
+
+RegisterExecutionPolicyException /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-RegisterExecutionPolicyException /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app
+
+Validate /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-validationUtility /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app -validate-for-store -shallow-bundle -infoplist-subpath Info.plist
+
+Touch /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /usr/bin/touch -c /Users/runner/work/schedule/schedule/build/ios/Build/Products/Release-iphoneos/Schedule.app
+
+** BUILD SUCCEEDED **
+

@@ -1,0 +1,462 @@
+Command line invocation:
+    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/xcodebuild build -project Schedule.xcodeproj -scheme Schedule -configuration Debug -sdk iphonesimulator -destination "generic/platform=iOS Simulator" -derivedDataPath build/sim ARCHS=arm64 ONLY_ACTIVE_ARCH=NO
+
+Build settings from command line:
+    ARCHS = arm64
+    ONLY_ACTIVE_ARCH = NO
+    SDKROOT = iphonesimulator26.5
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'Schedule' in project 'Schedule' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 43223da3049b7d95b3377cd65db5960c
+Build description path: /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/XCBuildData/43223da3049b7d95b3377cd65db5960c.xcbuilddata
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/sim/Build/Products
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/sim/Build/Products
+
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex
+
+ClangStatCache /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk /Users/runner/work/schedule/schedule/build/sim/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -o /Users/runner/work/schedule/schedule/build/sim/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache
+
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule-4688ba4d18ae4dd2dc340fa8d5848e31-VFS-iphonesimulator/all-product-headers.yaml
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule-4688ba4d18ae4dd2dc340fa8d5848e31-VFS-iphonesimulator/all-product-headers.yaml
+
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd /Users/runner/work/schedule/schedule/Schedule.xcodeproj
+    builtin-create-build-directory /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.DependencyStaticMetadataFileList (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.DependencyMetadataFileList (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-project-headers.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-own-target-headers.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-generated-files.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-all-target-headers.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-all-non-framework-target-headers.hmap (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-DebugDylibPath-normal-arm64.txt (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-DebugDylibInstallName-normal-arm64.txt (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-DebugDylibInstallName-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule_const_extract_protocols.json (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.SwiftConstValuesFileList (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.LinkFileList (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule-OutputFileMap.json (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/Entitlements-Simulated.plist (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    write-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/Entitlements-Simulated.plist
+
+MkDir /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /bin/mkdir -p /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app
+
+ProcessProductPackaging "" /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.app-Simulated.xcent (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "FAKETEAMID.io.github.trolloberg.schedule";
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.app-Simulated.xcent
+
+ProcessProductPackagingDER /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.app-Simulated.xcent /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.app-Simulated.xcent.der (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /usr/bin/derq query -f xml -i /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.app-Simulated.xcent -o /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.app-Simulated.xcent.der --raw
+
+Ld /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/__preview.dylib normal (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -F/Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -install_name @rpath/Schedule.debug.dylib -Xlinker -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule_dependency_info.dat -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.app-Simulated.xcent.der -Xlinker -no_adhoc_codesign -o /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/__preview.dylib
+
+MkDir /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_output/unthinned (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /bin/mkdir -p /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_output/unthinned
+
+MkDir /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_output/thinned (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /bin/mkdir -p /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_output/thinned
+
+GenerateAssetSymbols /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/actool /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets --compile /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_dependencies --output-partial-info-plist /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_generated_info.plist --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --development-region de --target-device iphone --minimum-deployment-target 17.0 --platform iphonesimulator --bundle-identifier io.github.trolloberg.schedule --generate-swift-asset-symbol-extensions NO --generate-swift-asset-symbols /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+CpResource /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/www /Users/runner/work/schedule/schedule/Schedule/www (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/schedule/schedule/Schedule/www /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app
+
+CompileAssetCatalogVariant thinned /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/actool /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets --compile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --development-region de --target-device iphone --minimum-deployment-target 17.0 --platform iphonesimulator
+/* com.apple.actool.compilation-results */
+/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_generated_info.plist_thinned
+/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_output/thinned/AppIcon60x60@2x.png
+/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_output/thinned/AppIcon76x76@2x~ipad.png
+/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_output/thinned/Assets.car
+
+
+SwiftDriver Schedule normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-SwiftDriver -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Schedule -Onone @/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/schedule/schedule/build/sim/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -F /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/schedule/schedule/build/sim/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-generated-files.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-own-target-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-project-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule-Swift.h -working-directory /Users/runner/work/schedule/schedule -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/ptrauth-F1XYKYOQJDFRDOY4LK9UF9M7K.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/ptrcheck-1288DVVQV8HFSKF99O8M1P5OP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/DeveloperToolsSupport-32OYUOLYHK7BOA4APQBXZLZJJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_Builtin_stdarg-ZA1Q98IPLGRA6T17FLNJ0CBU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_Builtin_stdbool-8CKTVHJ7RKRDOHVG4N036Z2JE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_SwiftConcurrencyShims-RV9EI7B5MGIC2EHM6CZ6CJNM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/SwiftShims-DIBV9R6JWCEQ2K0GIZZCUYM31.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_Builtin_stddef-AIC4ZX2LFHAG436W5AQGWF0WI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_AvailabilityInternal-6FDZ5SB1ZI1RN9A0M9ARGFARR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_Builtin_float-BVIG6KIHQ97XACX9A6AB1SNLN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_DarwinFoundation1-2PVQR1YZW670ISH275SLB5YIO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_Builtin_limits-3S67NQBD39BQV4X5WMYFN8CJK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_DarwinFoundation2-DEL1OWQPM4RY29V8HXMOFQD5N.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_Builtin_tgmath-AMFFGCEI6S5HO0SJ3PW8VEM9T.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/sys_types-1RZH7X4P26SOCPOGVXU5VBFTT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_Builtin_stdint-3YZPBVB4WKHIHSZ2SPB3B6JT6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_DarwinFoundation3-2IZ4POA702SI0V0KPAE9YYXEQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_Builtin_intrinsics-F1UKNI3X4L1RPWGBHVWOR4V7S.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_Builtin_stdatomic-ESBXZIM7GSBJOV6HCNG3899J.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/_Builtin_inttypes-CC0KZK7DY3SMLTB7DIPCJBVNB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Darwin-9BYDGQOXIWF6WQWV5UVKQBKOT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/simd-BCFJSYG2C52BEPH7OX0L03GFZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/MachO-DXOU6WGKQ39FTZ54IBDRVUPOC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/ObjectiveC-11S53B2PJTB7PUV1SG3FOFR9S.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Spatial-4M2N5DROUJBUE6T7JJ4DH971Z.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/os_object-9EV2B4XQHHDT4WNJAFOE6SNZ5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/os_workgroup-38998O67B8H81EHCH4A7FX9AL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Dispatch-BH4FA655GM8IZVRT4LOJ5715X.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/XPC-847K1AUKQCWQ50KSN5T9KMMIR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/CoreFoundation-XHSY8RCPUKO9QOV8GO8V17ZO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/dnssd-9H52BPIEXUK8UX3OP18GAVLY1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/os-SGYBSGIG3K13NFTFLUAZSE9P.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/CFNetwork-6GMB1MPS224WWQD63W7KGTUID.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/CoreGraphics-EIMIJZRO8XMYIHW8ZDACUQZ9S.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Security-5H06TA2P0WNR9QXLQLWZG14F9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Foundation-25NGZMWAQAODOAUIXY0CV8JXM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/ImageIO-6C3BDFLYJVR6DEGTPEJ3LXZPG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/CoreText-B9R3PM80GUJWO2N2FU66ZI83G.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Symbols-AWXAMHZM1X2VY3R1PPXPIOLOK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/OSLog-61IZ6QUPQ0AQUGNBBPJY04XGF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/UIUtilities-9MMV4U1212JRIQ11LROH08XPM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/DataDetection-2B47FNXH1LJTBMOKH9T2PMQV5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/OpenGLES-388ZBNA3A49EDB49SA0G2HRLU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Accessibility-273PNHGA8UI64OFNWF7Y23QRQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/UserNotifications-CLI5ZYXLFYBZXXSEOVA71OAD1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/FileProvider-WPGGU4RT7VGGOAJ0IH5H5YB5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/CoreTransferable-BKPP0HZLXJH6NE9MRIW4496IR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/IOSurface-A0ZUX4B8FV20N4JB2HA45RSWQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Network-2OXRSH12D2GTK3ITCG8GLELQZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/UniformTypeIdentifiers-F2X5L3FZMRX00RE7K4MWH19CI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Metal-9GSWPFK21LWY370IBOONJQ32V.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/CoreVideo-BZWM0LIXO009U1HQ9JX9T3Z27.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/CoreImage-984NXC5FCEWZZG2L4LJGZUOWH.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/QuartzCore-653P0QAICXJRMLIYVRTBJN6MV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/SwiftUICore-6KVLW80MDCRKE7Z2GSX71R7XZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/UIKit-2SDPBAY47KVZHF1RNFJRXDDEY.pcm
+
+LinkAssetCatalog /Users/runner/work/schedule/schedule/Schedule/Assets.xcassets (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-linkAssetCatalog --thinned /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_output/thinned --thinned-dependencies /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_generated_info.plist_unthinned --output /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app --plist-output /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Assets.car (in target 'Schedule' from project 'Schedule')
+note: Emplaced /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/AppIcon76x76@2x~ipad.png (in target 'Schedule' from project 'Schedule')
+note: Emplaced /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/AppIcon60x60@2x.png (in target 'Schedule' from project 'Schedule')
+
+ProcessInfoPlistFile /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Info.plist /Users/runner/work/schedule/schedule/Schedule/Info.plist (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-infoPlistUtility /Users/runner/work/schedule/schedule/Schedule/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/assetcatalog_generated_info.plist -o /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Info.plist
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/WebKit-1RFEMZQTN3K775G5ZJG77NCWA.pcm
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ Schedule (in target 'Schedule' from project 'Schedule')
+
+EmitSwiftModule normal arm64 (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+
+SwiftCompile normal arm64 Compiling\ AppDelegate.swift,\ SceneDelegate.swift,\ WebViewController.swift /Users/runner/work/schedule/schedule/Schedule/AppDelegate.swift /Users/runner/work/schedule/schedule/Schedule/SceneDelegate.swift /Users/runner/work/schedule/schedule/Schedule/WebViewController.swift (in target 'Schedule' from project 'Schedule')
+SwiftCompile normal arm64 /Users/runner/work/schedule/schedule/Schedule/AppDelegate.swift (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+
+SwiftCompile normal arm64 /Users/runner/work/schedule/schedule/Schedule/SceneDelegate.swift (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+
+SwiftCompile normal arm64 /Users/runner/work/schedule/schedule/Schedule/WebViewController.swift (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+
+SwiftCompile normal arm64 Compiling\ BundleSchemeHandler.swift,\ DataStore.swift,\ Reminders.swift /Users/runner/work/schedule/schedule/Schedule/BundleSchemeHandler.swift /Users/runner/work/schedule/schedule/Schedule/DataStore.swift /Users/runner/work/schedule/schedule/Schedule/Reminders.swift (in target 'Schedule' from project 'Schedule')
+
+SwiftCompile normal arm64 /Users/runner/work/schedule/schedule/Schedule/BundleSchemeHandler.swift (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+
+SwiftCompile normal arm64 /Users/runner/work/schedule/schedule/Schedule/DataStore.swift (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+
+SwiftCompile normal arm64 /Users/runner/work/schedule/schedule/Schedule/Reminders.swift (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+
+SwiftCompile normal arm64 Compiling\ Support.swift,\ GeneratedAssetSymbols.swift /Users/runner/work/schedule/schedule/Schedule/Support.swift /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'Schedule' from project 'Schedule')
+
+SwiftCompile normal arm64 /Users/runner/work/schedule/schedule/Schedule/Support.swift (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+
+SwiftCompile normal arm64 /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for Schedule (in target 'Schedule' from project 'Schedule')
+
+SwiftDriver\ Compilation\ Requirements Schedule normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Schedule -Onone @/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/schedule/schedule/build/sim/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -F /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/schedule/schedule/build/sim/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-generated-files.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-own-target-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-project-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule-Swift.h -working-directory /Users/runner/work/schedule/schedule -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling Support.swift, GeneratedAssetSymbols.swift (in target 'Schedule' from project 'Schedule')
+
+SwiftMergeGeneratedHeaders /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/Schedule-Swift.h /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule-Swift.h (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-swiftHeaderTool -arch arm64 /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule-Swift.h -o /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/Schedule-Swift.h
+
+Copy /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.swiftdoc (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.swiftdoc /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.abi.json (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.abi.json /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.swiftsourceinfo (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.swiftsourceinfo /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling BundleSchemeHandler.swift, DataStore.swift, Reminders.swift (in target 'Schedule' from project 'Schedule')
+
+SwiftDriverJobDiscovery normal arm64 Compiling AppDelegate.swift, SceneDelegate.swift, WebViewController.swift (in target 'Schedule' from project 'Schedule')
+
+SwiftDriver\ Compilation Schedule normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-Swift-Compilation -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Schedule -Onone @/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/schedule/schedule/build/sim/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -F /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/schedule/schedule/build/sim/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/schedule/schedule/build/sim/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-generated-files.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-own-target-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-project-headers.hmap -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule-Swift.h -working-directory /Users/runner/work/schedule/schedule -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Schedule.debug.dylib normal (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -F/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -filelist /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.LinkFileList -install_name @rpath/Schedule.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.swiftmodule @/Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule-linker-args.resp -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -Xlinker -no_adhoc_codesign -o /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Schedule.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-ExecutorLinkFileList-normal-arm64.txt (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    construct-stub-executor-link-file-list /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Schedule.debug.dylib /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'Schedule' from project 'Schedule')
+
+Ld /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Schedule normal (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -F/Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule-ExecutorLinkFileList-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.app-Simulated.xcent.der /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Schedule.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Schedule
+
+ExtractAppIntentsMetadata (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.D58uBr/Metal.xctoolchain --module-name Schedule --sdk-root /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk --xcode-version 17F113 --platform-family iOS --deployment-target 17.0 --bundle-identifier io.github.trolloberg.schedule --output /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Schedule --dependency-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule_dependency_info.dat --stringsdata-file /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.SwiftFileList --metadata-file-list /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Objects-normal/arm64/Schedule.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-11-13 09:45:22.105 appintentsmetadataprocessor[1650:8553] Starting appintentsmetadataprocessor export
+2026-11-13 09:45:22.115 appintentsmetadataprocessor[1650:8553] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+CopySwiftLibs /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Schedule.debug.dylib --scan-folder /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Frameworks --scan-folder /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/PlugIns --scan-folder /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/SystemExtensions --scan-folder /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Extensions --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.D58uBr/Metal.xctoolchain --toolchain /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
+
+AppIntentsSSUTraining (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Info.plist --temp-dir-path /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/ssu --bundle-id io.github.trolloberg.schedule --product-path /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app --extracted-metadata-path /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Metadata.appintents --metadata-file-list /Users/runner/work/schedule/schedule/build/sim/Build/Intermediates.noindex/Schedule.build/Debug-iphonesimulator/Schedule.build/Schedule.DependencyMetadataFileList --source-file /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Info.plist --archive-ssu-assets
+2026-11-13 09:45:22.166 appintentsnltrainingprocessor[1656:8569] Parsing options for appintentsnltrainingprocessor
+2026-11-13 09:45:22.167 appintentsnltrainingprocessor[1656:8569] Starting AppIntents SSU YAML Generation
+2026-11-13 09:45:22.172 appintentsnltrainingprocessor[1656:8569] No AppShortcuts found - Skipping.
+
+CodeSign /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Schedule.debug.dylib (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/Schedule.debug.dylib
+
+CodeSign /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/__preview.dylib (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app/__preview.dylib
+
+CodeSign /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app
+
+RegisterExecutionPolicyException /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-RegisterExecutionPolicyException /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app
+
+Validate /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    builtin-validationUtility /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app -shallow-bundle -infoplist-subpath Info.plist
+
+Touch /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app (in target 'Schedule' from project 'Schedule')
+    cd /Users/runner/work/schedule/schedule
+    /usr/bin/touch -c /Users/runner/work/schedule/schedule/build/sim/Build/Products/Debug-iphonesimulator/Schedule.app
+
+** BUILD SUCCEEDED **
+
