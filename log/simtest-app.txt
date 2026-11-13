@@ -1,0 +1,17 @@
+io.github.trolloberg.schedule: 12137
+[6 s] gestartet: 01-erster-start (Start dauerte 2 s, Last { 407.10 236.45 117.01 })
+io.github.trolloberg.schedule: 12986
+[45 s] gestartet: 02-heute (Start dauerte 1 s, Last { 461.05 271.98 135.53 })
+io.github.trolloberg.schedule: 14344
+[83 s] gestartet: 03-woche (Start dauerte 3 s, Last { 501.06 305.80 154.18 })
+io.github.trolloberg.schedule: 14781
+[104 s] gestartet: 04-einstellungen (Start dauerte 4 s, Last { 498.94 317.97 162.07 })
+io.github.trolloberg.schedule: 16635
+[197 s] gestartet: 05-mitteilungen (Start dauerte 7 s, Last { 542.95 375.57 199.61 })
+io.github.trolloberg.schedule: 17361
+[224 s] gestartet: 06-dunkel (Start dauerte 3 s, Last { 527.80 388.02 210.22 })
+io.github.trolloberg.schedule: 18062
+[252 s] gestartet: 07-geleert (Start dauerte 4 s, Last { 429.64 377.67 212.63 })
+io.github.trolloberg.schedule: 18770
+[271 s] gestartet: 08-nach-dem-leeren (Start dauerte 7 s, Last { 396.14 372.79 213.78 })
+ci/simtest.sh: line 129: PARTâ: unbound variable

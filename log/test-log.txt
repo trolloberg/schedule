@@ -1,0 +1,60 @@
+selftest expiry 1795082400 ok
+selftest files daily=0 before=0
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t1","safe":{"env":"0px/0px","used":"62px/34px","nst":"62px","at":6508},"tutorial":true,"skipTop":72}
+notify notDetermined n=0
+js {"step":"t1-env","safe":{"env":"62px/34px","used":"62px/34px","nst":"-","at":8043},"polls":1}
+js {"step":"t1-later","safe":{"env":"62px/34px","used":"62px/34px","nst":"-","at":9559}}
+selftest expiry 1795082400 ok
+selftest files daily=0 before=0
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t2","native":true,"version":"4.0.0","url":"app://schedule/index.html","lang":"de-DE","info":{"ios":"26.5","version":"4.0.0","safe":{"b":34,"t":62},"build":"1","lang":"de"},"ua":"Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","safe":{"env":"0px/0px","used":"62px/34px","nst":"62px","at":2966},"size":"402x874","dpr":3,"tutorial":true,"storedBefore":false,"hidden":false,"sw":false,"secure":true,"slots":11,"todos":2,"stored":true,"mod":"1794215520013"}
+notify notDetermined n=0
+notify notDetermined n=0
+js {"step":"t2-later","safe":{"env":"62px/34px","used":"62px/34px","nst":"-","at":5561}}
+selftest expiry 1795082400 ok
+selftest files daily=1 before=0
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t3","slots":11,"todos":2,"restored":false,"stored":true,"tut":3,"tutorial":false}
+notify notDetermined n=0
+notify notDetermined n=0
+selftest expiry 1795082400 ok
+selftest files daily=1 before=0
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t4","phase":1,"slots":11,"cleared":true}
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t4","phase":2,"slots":11,"todos":2,"restored":true,"stored":true}
+notify notDetermined n=0
+notify notDetermined n=0
+selftest expiry 1795082400 ok
+selftest files daily=1 before=0
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t5","before":{"last":1794563640074,"n":0,"until":0,"st":"notDetermined","err":""},"on":0}
+js {"step":"t5-later","on":0,"status":{"last":1794563640074,"n":0,"until":0,"st":"notDetermined","err":""},"text":"ert dich selbst, ohne Server und ohne Internet. Nichts verlässt das Gerät. Wenn ein Blocker beginnt Erinnern Zum Beginn iOS merkt sich höchstens 64 Erinnerungen im Voraus. Schedule legt bei jedem Öffnen nach. Öffne die App deshalb mindestens einmal pro Woche. "}
+notify provisional n=59
+notify provisional n=59
+selftest expiry 1795082400 ok
+selftest files daily=1 before=0
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t7","dark":true,"theme":"dark","set":"auto"}
+notify provisional n=33
+notify provisional n=33
+selftest expiry 1795082400 ok
+selftest files daily=1 before=0
+load 1 safe=62.0/34.0
+ready 4.0.0
+js {"step":"t12","before":11,"after":0}
+notify provisional n=0
+notify provisional n=0
+selftest expiry 1795082400 ok
+selftest files daily=1 before=1
+load 1 safe=62.0/34.0
+ready 4.0.0
+notify provisional n=0
