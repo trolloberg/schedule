@@ -3,6 +3,8 @@
 Schedule als echte iPhone-App. Die App läuft komplett ohne Internet, alle Daten bleiben auf dem iPhone.
 Sie wird nicht im App Store veröffentlicht, sondern direkt aufs eigene iPhone geladen.
 
+**Für Entwickler:** Aufbau, Brücke zwischen Swift und Oberfläche, Datenmodell, Bauen und alle Dateien stehen in [`README-Entwickler.md`](README-Entwickler.md).
+
 ## Aufbau
 
 | Ordner | Inhalt |
